@@ -25,10 +25,11 @@ const Turbine = (props: TurbineProps) => {
             scrollTrigger: {
                 trigger: tBoxRef.current,
                 pin: true,
-                start: "center center" ,
-                end: "+=300",
-                markers: true,
-                scrub: 1 
+                // --param 1 = animation faster/slower (if far Apartment, animate IN duration increase), param 2 -animation occur quicker/slower/timing of animation
+                start: "center center" , 
+                end: "+=200",
+                markers: false,
+                scrub: true
             }
         });
     }, []);
@@ -43,9 +44,15 @@ const Turbine = (props: TurbineProps) => {
                 maxHeight: '900px',
             }}
         >
+            <div style={{ height: "15vh" }} />
             {/* Header Section */}
+
             <Box
                 sx={{
+                    minHeight: '100vh',
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     // flexShrink: 0,
                     // position: 'sticky',
                     // top: 0,
